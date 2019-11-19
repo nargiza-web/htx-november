@@ -1,0 +1,74 @@
+body {
+    background-image: url("https://www.thoughtco.com/thmb/k-2iT7ggiBX-EUeK_GhNZwPdUj4=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/confused-girl-in-front-of-a-blackboard-full-of-formulas--947690882-5af49088eb97de003d93de23.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+}
+.navbar {
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color:#DAC01A;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown{
+    float:left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn{
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #DAC01A;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+
+/*.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #ecd85d;
+}*/
+
+.dropdown-content {
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 130px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a{
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+form {
+    float: right;
+}
+
+.sunflower-style{
+    background-color: #DAC01A;
+    font-size: 16px;
+}

@@ -1,0 +1,9 @@
+.product{
+    position:relative;
+}
+.deal{
+    position: absolute;
+    top: 251px;
+    left: 50px;
+    z-index: 3;
+}
