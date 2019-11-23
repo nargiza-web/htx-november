@@ -1,0 +1,89 @@
+
+/*
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  }
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+    body {
+        background-color: red;
+    }   
+    
+    #latest-news div {
+        display: flex;
+        flex-direction: column;
+        margin:10px;
+        text-align: center;
+    }
+    
+}
+
+/* Mobile */
+@media (min-width: 320px) and (max-width: 480px) {
+  
+    body {
+        background-color: green;
+        font-size: 28;
+    }
+
+    #menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #latest-news {
+        flex-direction: column;
+    }
+
+    #latest-news div {
+        flex-direction: row;
+    }
+
+    
+}
+
+/* Common Styles Applied to All Devices */
+#menu {
+    display: flex; 
+    background-color: orange;
+    color: white; 
+    /*
+    justify-content: center; */
+}
+
+#latest-news div {
+    margin:10px;
+}
+
+#menu div {
+    margin: 10px; 
+}
+
+#container {
+    display: flex; 
+    flex-direction: column;
+}
+
+#menu div:nth-child(1) {
+    background-color: red;
+}
+
+#menu div:nth-child(2) {
+    background-color: blue;
+}
+
+#latest-news {
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+#latest-news img {
+    width: 100px; 
+    height: 100px;
+    
+}
+

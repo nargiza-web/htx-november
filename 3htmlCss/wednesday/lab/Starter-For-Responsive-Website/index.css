@@ -1,0 +1,55 @@
+
+ul {
+  text-align:center
+}
+
+ul li {
+  display:inline-block;
+  background-color: gray;
+  padding:10px;
+  margin:10px;
+  color:white;
+}
+
+.post h1 {
+  background-color:lightBlue;
+}
+
+.post img {
+  width:200px;
+  display:block;
+}
+
+.post-image {
+    float:left;
+    margin-right:10px;
+}
+
+/*Mobile*/
+@media (min-width: 320px) and (max-width: 480px){
+    body{
+        background-color: yellow;
+    }
+    
+    ul{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    ul li{
+        background-color: yellow;
+        color: black;
+    }
+    .post-image {
+        display:flex;
+        margin-left: 10px; 
+       flex-direction: row-reverse;
+        
+    }
+    
+    .post{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}

@@ -1,0 +1,45 @@
+.navbar {
+    background-color: black;
+    color: white;
+    display: flex;
+}
+
+.navbar div{
+    margin: 20px;
+}
+
+#ad {
+    width:100%;
+    height: 100px;
+    margin-top: 11px;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.images img{
+    width:150px;
+    height: 100px;
+}
+
+.images div{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+/*Mobile */
+@media (min-width: 320px) and (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .images{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}

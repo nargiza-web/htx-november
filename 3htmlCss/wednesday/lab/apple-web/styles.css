@@ -1,0 +1,41 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: black;
+}
+.navbar {
+    background-color: #323232;
+    display:flex;
+    color: white;
+}
+
+.navbar div {
+    margin: 10px;
+}
+.navbar div:nth-child(1){
+    margin-left: 40px;
+}
+
+.img {
+    background-image: url("images/iPhone-desktop.png");
+    background-repeat: no-repeat;
+  
+    background-position: center;
+    height:100%;
+}
+
+/* Mobile */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .navbar {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar div:nth-child(1){
+    margin-left: 10px;
+}
+    .img {
+        background-image: url("images/vertical.png")
+    }
+}

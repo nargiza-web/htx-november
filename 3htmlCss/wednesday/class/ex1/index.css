@@ -1,0 +1,30 @@
+#menu {
+    display: flex; 
+    background-color: orange;
+    color: white; 
+    justify-content: center;
+}
+
+#menu div {
+    margin: 10px; 
+}
+
+#latest-news {
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+#latest-news div {
+    display: flex;
+    flex-direction: column;
+    margin:10px;
+    text-align: center;
+}
+
+#latest-news img {
+    width: 100px; 
+    height: 100px;
+    
+}
+
+
