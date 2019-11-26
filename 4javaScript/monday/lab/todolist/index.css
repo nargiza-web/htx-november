@@ -1,0 +1,27 @@
+body{
+  background-color: bisque;
+  margin: 20px 20px;
+}
+button {
+  background-color: #3FA5DA;
+  color: white;
+  border: none;
+}
+
+h5{
+  text-align: center;
+  color: grey;
+}
+
+ul{
+  list-style-type: none;
+}
+
+ul li {
+  color: white;
+  background-color: #3FA5DA;
+  margin: 10px;
+}
+.checkbox {
+  border: 3px solid red;
+}
