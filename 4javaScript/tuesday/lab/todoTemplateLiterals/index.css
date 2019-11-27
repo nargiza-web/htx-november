@@ -1,0 +1,56 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0 auto;
+}
+
+#addTask{
+  border: 1px solid gray;
+  margin-right: 13px;
+}
+#btnAdd {
+  color:white;
+  background-color:#3FA5DA;
+  width: 50px;
+}
+.wrap-center{
+ display:flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 3px;
+}
+#top{
+  margin-top: 30px;
+}
+.wrap {
+  text-align: center;
+}
+
+ul{
+  list-style-type: none;
+}
+#lists{
+  color: white;
+  background-color: #3FA5DA;
+  margin: 7px;
+}
+.allItems {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: #3FA5DA;
+  margin: 7px;
+}
+
+.btnRemove{
+  color: white;
+  font-size: 7px;
+  text-align: end;
+}
+
+.box{
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+}
