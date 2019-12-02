@@ -1,0 +1,32 @@
+<html>
+<head></head>
+
+<body>
+
+  <input type="text" id="todoTitleTextBox" />
+  <button id="btnSave">Save</button>
+
+  <ul id="tasksList">
+  </ul>
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  const config = {
+    apiKey: "AIzaSyDtObkZWsf7zRcO5QSWChH4aVoJPJg6WwY",
+    authDomain: "todolistapp-bf073.firebaseapp.com",
+    databaseURL: "https://todolistapp-bf073.firebaseio.com",
+    projectId: "todolistapp-bf073",
+    storageBucket: "todolistapp-bf073.appspot.com",
+    messagingSenderId: "993719019771"
+  };
+  firebase.initializeApp(config);
+
+  let database = firebase.database();
+
+</script>
+<script src="site.js"></script>
+
+</html>

@@ -1,0 +1,38 @@
+.posters{
+  display: flex;
+  flex-flow: row wrap;
+
+}
+
+li{
+  list-style-type:none;
+  margin: 1rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.container{
+  display: flex;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  
+}
+.left{
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+}
+
+.thumbnails{
+  width: 100px;
+  height: auto;
+}
+
+.thumbtext{
+  font-size: 9px;
+}

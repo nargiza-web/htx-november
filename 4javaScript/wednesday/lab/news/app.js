@@ -1,9 +1,16 @@
 let newsPaper = document.getElementById("news");
 let allNews = document.getElementById("allNews");
+function yup() {
+  console.log('I ran!')
+  let x = 'hello'
+  console.log(x)
+  let v='jey'
+  console.log(v)
+  console.log("he said")
+}
 
-console.log(news.articles);
 
-news.articles.map(element => {
+let displayed = news.articles.map(element => {
   let paper = `<li>
               <h4>${element.author}</h4>
               <h2>${element.title}</h2>
@@ -16,9 +23,17 @@ news.articles.map(element => {
   newsPaper.innerHTML += paper;
 })
 
-
-
-sources.sources.map(element => {
-  let listOfNews = `<a href="#">${element.id}</a>`
+let displaying = sources.sources.map(element => {
+  // function yup() {
+  //   let x = 'hello'
+  //   console.log(x)
+  //   let v='jey'
+  //   console.log(v)
+  // }
+  let stuff = yup
+  let listOfNews = `<a onclick="yup()" href="#" >${element.id}</a>`
+  
   allNews.innerHTML += listOfNews;
+  
 })
+
