@@ -1,5 +1,5 @@
 //@channel POST XMLHttpRequest 
-
+le
 const url = "https://jsonplaceholder.typicode.com/users"
 const postURL = 'https://jsonplaceholder.typicode.com/posts'
 const usersUL = document.querySelector("#usersUL")
