@@ -9,9 +9,9 @@ const yourCoffee = document.querySelector(".yourCoffee")
 
 function displayNames(obj){
   allCoffee.innerHTML = "" 
-  console.log(obj)
+  //console.log(obj)
   for (let property in obj){
-    console.log(property)
+    //console.log(property)
     let info = obj[property]
     let displayCoffee = `<li>${info.coffee}</li>`
     allCoffee.innerHTML += displayCoffee;
@@ -37,11 +37,11 @@ addRequest.onload = function() {
   getAllOrders()
 }
 let emailValue = email.value;
-console.log(emailValue);
+//console.log(emailValue);
 let coffeeValue = cofName.value;
-console.log(coffeeValue);
+//console.log(coffeeValue);
 let coffeeString = {emailAddress:emailValue, coffee:coffeeValue};
-console.log(coffeeString);
+//console.log(coffeeString);
 displayNames(coffeeString);
 addRequest.send(JSON.stringify(coffeeString));
 })
@@ -49,32 +49,54 @@ addRequest.send(JSON.stringify(coffeeString));
 getAllOrders() 
 
 searchCoffee.addEventListener('click', () => {
-  let typeEmailValue = typeEmail.value;
-  //console.log(typeEmailValue);
+  let inputEmailForSearch = typeEmail.value
+  searchOrder(inputEmailForSearch)
+})
+
+function searchOrder(email) {
+  let searchURL = `http://dc-coffeerun.herokuapp.com/api/coffeeorders/${email}`
   
-  let request = new XMLHttpRequest();
-request.onload = function(){
-  let data = JSON.parse(this.responseText);
-  for(let property in data){
-    // let whatever = data[property]
-    //console.log(whatever);
-    // for(let i=0; i<data[property].length; i++){
-    //   if( data[property].emailAddress == typeEmailValue){
-    //     console.log("hello");
-    //   }
-    // }
-    
-    if(data[property].emailAddress == typeEmailValue){
-      console.log(data[property].coffee)
-    }
-    else{
-      console.log("not yet")
-    }
+  let request = new XMLHttpRequest()
+  request.open("GET", searchURL)
+  
+  request.onload = function(){
+    let data = JSON.parse(this.responseText)
+    console.log(data)
+    console.log(data.coffee)
+    let display = `<li>${data.coffee}</li>
+                  <button>Delete</button>`
+    yourCoffee.innerHTML = display
   }
+  request.send()
 }
 
-request.open('GET', url);
-request.send();
-})
+// searchCoffee.addEventListener('click', () => {
+//   let typeEmailValue = typeEmail.value;
+//   //console.log(typeEmailValue);
+  
+//   let request = new XMLHttpRequest();
+// request.onload = function(){
+//   let data = JSON.parse(this.responseText);
+//   for(let property in data){
+//     // let whatever = data[property]
+//     //console.log(whatever);
+//     // for(let i=0; i<data[property].length; i++){
+//     //   if( data[property].emailAddress == typeEmailValue){
+//     //     console.log("hello");
+//     //   }
+//     // }
+    
+//     if(data[property].emailAddress == typeEmailValue){
+//       console.log(data[property].coffee)
+//     }
+//     else{
+//       console.log("not yet")
+//     }
+//   }
+// }
+
+// request.open('GET', url);
+// request.send();
+// })
 
 

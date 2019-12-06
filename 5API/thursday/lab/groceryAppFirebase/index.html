@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Grocery App</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <h1>Add groceries to any store or add your own store</h1>
+  <div id="allstores"></div>
+  <br>
+  <p>Add your Grocery Store </p>
+  <label>Store: </label>
+  <input id = "groceryStore" type="text" placeholder="HEB, Whole Foods, Aldi..">
+  <label>Address:</label>
+  <input id = "groceryAddress" type="text" placeholder="123 abc street">
+  <button id="categoryBtn">add my store</button>
+  <br>
+  <!-- <label>Grocery Items: </label>  
+  <input id="groceryItem" type="text" placeholder="milk, eggs, bread...">
+  <button id="addBtn">add</button>-->
+  <ul id="storeList"></ul>
+  <div>
+    <ul id="groceryItems"></ul>
+  </div>
+  
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+
+<!-- Firebase Realtime Database Library -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDTJy8mEMOwm3cTJ-LkQnnivg7jmVkRPnY",
+      authDomain: "groceryapp-fd9cf.firebaseapp.com",
+      databaseURL: "https://groceryapp-fd9cf.firebaseio.com",
+      projectId: "groceryapp-fd9cf",
+      storageBucket: "groceryapp-fd9cf.appspot.com",
+      messagingSenderId: "189365322897",
+      appId: "1:189365322897:web:737729ec9013eb70a6eb30",
+      measurementId: "G-X0W7MB1ZWJ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+<script src="app.js"></script>
+<script src="app1.js"></script>
+</html>

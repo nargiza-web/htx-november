@@ -1,0 +1,11 @@
+p {
+  color: green;
+}
+
+.storeTitle {
+  color: blue;
+}
+button{
+  background-color:lightblue;
+  border-radius: 7px;
+}
