@@ -9,22 +9,46 @@ let listItems = document.getElementById("listItems")
 let storeList = document.getElementById("storeList")
 let allstores = document.getElementById("allstores")
 let addItemOnYourList = document.getElementById("addItemOnYourList")
+let itemValue = document.getElementById("itemValue")
 //Get a reference to the database service
 let database = firebase.database();
 let root = database.ref();
+let itemsRef = root.child("items")
 
 //create a ShoppingLists under child
 let shoppingListsRef = root.child('ShoppingLists')
 
 function displayStores(stores){
   let storeTitles = stores.map(store => {
-    return `<li>${store.title}</li>
+    return `<li class="title">${store.title}</li>
+            <label>add your item:</label>
+            <input id="itemValue" type="text">
+            <input type="hidden"> 
             <button id="addItemOnYourList">add your list</button>
+            <button id="remove" onclick='deleteStore("${store.storeID}")'>remove this store</button>
     `
   })
   
   allstores.innerHTML = storeTitles.join('')
 }
+
+function displayItems(items){
+  let addedItems = items.map(item => {
+    return `
+            <li>${item.item}</li>
+    `
+  })
+  groceryItems.innerHTML += addedItems
+}
+
+function deleteStore(thisStoreID){
+  shoppingListsRef.child(thisStoreID).remove()
+  console.log(shoppingListId)
+}
+
+
+
+//event.target.previousElementSibling.previousElementSibling to go to the most upper sibling
 
 function setupObservers(){
   shoppingListsRef.on('child_added', snapshot => {
@@ -32,22 +56,44 @@ function setupObservers(){
     console.log(allData)
     console.log(allData.title)
   })
+  
+  itemsRef.on('child_added', snapshot => {
+    let allData = {key: snapshot.key, ...snapshot.val() }
+  })
 }
 
 // categoryBtn.addEventListener("click", () => {
   
   shoppingListsRef.on('value', (snapshot) => {
     let groceryMarket= []
+  
     let snapshotValue = snapshot.val()
     
+    
     for (let key in snapshotValue) {
-      console.log(key)
+      //console.log(key)
       let grocery = snapshotValue[key]
-      console.log(grocery.title)
+      grocery.storeID = key
+      
+      //console.log(grocery.title)
       groceryMarket.push(grocery)
+    
     }
-    console.log(groceryMarket)
+    //console.log(groceryMarket)
     displayStores(groceryMarket)
+  
+  })
+  
+  itemsRef.on('value', (snapshot) => {
+    let items = []
+    let snapshotValue = snapshot.val()
+    
+    for(let key in snapshotValue){
+      let itemStuff = snapshotValue[key]
+      items.push(itemStuff)
+    }
+    
+    displayItems(items)
   })
   
   categoryBtn.addEventListener("click", () => {
@@ -60,6 +106,17 @@ function setupObservers(){
       address: address
     })
   })
+  
+  addItemOnYourList.addEventListener("click", () => {
+    let item = itemValue.value
+    let itemRef = itemsRef.push()
+    //now you need to save this value in database
+   itemRef.set({
+    item: item
+   })
+      
+    })
+
   
   // addItemOnYourList.addEventListener("click", ()=>{
   //   let display = `<h3></h3>`

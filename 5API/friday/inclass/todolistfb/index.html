@@ -1,0 +1,35 @@
+<html>
+<head></head>
+
+<body>
+
+<h1>Enter New Task</h1>
+<input type="text" id="titleTextBox" />
+<button id="btnAddTask">Add Task</button>
+
+
+<ul id="tasksList">
+
+</ul>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBs-zyA0PSbQkp0qe3ULN6JAtHFJH5Qh-0",
+      authDomain: "todolistapp-2cb1c.firebaseapp.com",
+      databaseURL: "https://todolistapp-2cb1c.firebaseio.com",
+      projectId: "todolistapp-2cb1c",
+      storageBucket: "",
+      messagingSenderId: "678859518346"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+<script src="app.js"></script>
+
+</body>
+</html>

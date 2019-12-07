@@ -9,3 +9,7 @@ button{
   background-color:lightblue;
   border-radius: 7px;
 }
+.title{
+  color: green;
+  font-size: 25px;
+}

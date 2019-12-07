@@ -1,0 +1,55 @@
+<html>
+    <head></head>
+    <body>
+    
+    <h1>Register</h1>
+    <input type="text" id="registerEmailTextBox" />
+    <input type="password" id="registerPasswordTextBox" />
+    <button id="registerButton">Register</button>
+
+    <h1>Login</h1>
+    <input type="text" id="loginEmailTextBox" />
+    <input type="password" id="loginPasswordTextBox" />
+    <button id="loginButton">Login</button>
+
+    <button id="signoutButton">Signout</button>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+
+<!-- Firebase Realtime Database Library -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+
+<!-- Authentication Library for Firebase -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBhK0LrdYUaM5oVN_IyKuIreKd2qZrE6zo",
+    authDomain: "mytodolist-d9bbf.firebaseapp.com",
+    databaseURL: "https://mytodolist-d9bbf.firebaseio.com",
+    projectId: "mytodolist-d9bbf",
+    storageBucket: "mytodolist-d9bbf.appspot.com",
+    messagingSenderId: "46779370138",
+    appId: "1:46779370138:web:8318ac10f942e358a06d23",
+    measurementId: "G-LJ6GQGFTPX"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+</script>
+
+<script src="register.js"></script>
+
+    </body>
+</html>
