@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Cloud Cafe</title>
+</head>
+<body>
+  <h1>Cloud Cafe</h1>
+  <div class = "content">
+    <form id="add-cafe-form">
+        <input type="text" name="name" placeholder="Cafe name">
+        <input type="text" name="city" placeholder="Cafe city">
+        <button>Add Cafe</button>
+    </form>
+    
+    <ul id="cafe-list"></ul>
+  </div>
+</body>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDSyWLIJ3KOg9foJnk-yjn87ecukS2B4yo",
+    authDomain: "firestore-playlist-f3e09.firebaseapp.com",
+    databaseURL: "https://firestore-playlist-f3e09.firebaseio.com",
+    projectId: "firestore-playlist-f3e09",
+    storageBucket: "firestore-playlist-f3e09.appspot.com",
+    messagingSenderId: "1000899582657",
+    appId: "1:1000899582657:web:9d82289bc6566b9e149240",
+    measurementId: "G-JK33V7DGGZ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const db = firebase.firestore();
+</script>
+<script src="app.js"></script>
+</html>
