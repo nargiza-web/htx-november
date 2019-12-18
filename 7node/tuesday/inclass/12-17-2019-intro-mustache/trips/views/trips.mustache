@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+
+<body>
+
+    <form method="POST" action="/trips">
+        <input type="text" name="myTitle" placeholder="title" />
+        <input type="text" name="myCost" placeholder= "cost" />
+        <input name="isPaid" type="checkbox" />
+        <button>Save</button>
+    </form>
+
+    
+    {{#myTrips}} <!-- loop start --> 
+
+        <h1>{{title}}</h1>
+        <b>${{cost}}</b>
+
+    {{/myTrips}} <!-- end loop -->
+
+</body>
+
+</html>

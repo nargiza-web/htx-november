@@ -1,0 +1,18 @@
+<html>
+<head>
+</head>
+
+<body>
+  <form method = "POST" action = "/trips">
+    <input type = "text" name = "myTitle" placeholder="title" >
+  <input name = "myCost" type="text" placeholder="cost">
+  <input name="isPaid">
+  <button>Save</button>
+  </form>
+  
+  {{#myTrips}}
+    <h1>{{title}}</h1>
+    <b> $ {{cost}}</b>
+  {{/myTrips}}
+</body>
+</html>

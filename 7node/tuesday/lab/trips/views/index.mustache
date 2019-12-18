@@ -1,0 +1,26 @@
+<html>
+<head></head>
+<body>
+  <h1>Your Trips</h1>
+  <form method = "POST" action = "/add-trip">
+    <input type="text" name="myTitle" placeholder="title">
+    <input type="text" name="myDeparture" placeholder="departure date">
+    <input type="text" name="myReturn" placeholder="return date">
+    <button>Add</button>
+  </form>
+  {{#trips}}
+  <form action="/delete-trip" method="POST">
+    <img src="https://en.es-static.us/upl/2018/12/comet-wirtanen-Jack-Fusco-dec-2018-Anza-Borrego-desert-CA-e1544613895713.jpg">
+    <h1>My trip to: {{myTitle}}</h1>
+    <input type="hidden" value={{title}} name="city">
+    <h2>My departure is on {{myDeparture}}</h2>
+    <h2>My return is on {{myReturn}}</h2>
+    <button >Remove</button>
+  </form>
+  
+  {{/trips}}
+  
+  
+  
+</body>
+</html>
