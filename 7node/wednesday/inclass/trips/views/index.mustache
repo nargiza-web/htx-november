@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <link href="/site.css" rel="stylesheet"></link>
+</head>
+
+<body>
+
+{{> menu}}
+
+<h1>Trips</h1>
+    <form method="POST" action="/trips/add-trip">
+    <input name="title" type="text" placeholder="title" />
+    <input name="cost" type="text" placeholder="cost" />
+    <button>Save</button>
+    </form>
+
+    <b>
+    {{> menu}}
+    </b>
+
+ <h1>List of Trips</h1>
+    <ul>
+    {{#trips}}
+    <li>
+    <form method = "POST" action = "/trips/delete-trip">
+    <label> {{title}} </label>
+    <label> ${{cost}} </label>
+    <input type="hidden" name="city" value="{{title}}" />
+    <button>Remove</button>
+    </form>
+    </li>
+
+    {{/trips}}
+    </ul>
+{{> menu}}
+</body>
+</html>

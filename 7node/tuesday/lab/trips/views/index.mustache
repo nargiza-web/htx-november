@@ -8,19 +8,23 @@
     <input type="text" name="myReturn" placeholder="return date">
     <button>Add</button>
   </form>
+  
+  <h2>List of trips </h2>
+  <ul>
   {{#trips}}
+  <li>
   <form action="/delete-trip" method="POST">
-    <img src="https://en.es-static.us/upl/2018/12/comet-wirtanen-Jack-Fusco-dec-2018-Anza-Borrego-desert-CA-e1544613895713.jpg">
-    <h1>My trip to: {{myTitle}}</h1>
-    <input type="hidden" value={{title}} name="city">
-    <h2>My departure is on {{myDeparture}}</h2>
-    <h2>My return is on {{myReturn}}</h2>
+    <img src="https://en.es-static.us/upl/2018/12/comet-wirtanen-Jack-Fusco-dec-2018-Anza-Borrego-desert-CA-e1544613895713.jpg" style="width:100px; height: 100px;">
+    <h3>My trip to: {{myTitle}}</h3>
+    <input type="hidden" value={{myTitle}} name="city">
+    <h4>My departure is on {{myDeparture}}</h4>
+    <h4>My return is on {{myReturn}}</h4>
     <button >Remove</button>
   </form>
-  
+  </li>
   {{/trips}}
   
-  
+  </ul>
   
 </body>
 </html>
