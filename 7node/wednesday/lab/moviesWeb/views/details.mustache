@@ -1,0 +1,19 @@
+<html>
+<head></head>
+<body>
+{{> menu}}
+<h1> Your Movie </h1>
+<ul>
+  {{#movie}}
+  <li> 
+    <h2>{{title}}</h2>
+    <h3>{{description}}</h3>
+    <h3>{{genre}}</h3>
+    <img src="{{url}}">
+    <input type="hidden" value={{movieId}}/>
+  </li>
+  {{/movie}}
+</ul>
+
+</body>
+</html>
