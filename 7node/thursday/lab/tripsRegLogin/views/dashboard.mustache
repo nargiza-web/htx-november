@@ -1,0 +1,31 @@
+<html>
+<head></head>
+<body>
+<h1>Your Dashboard</h1>
+<h3><a href="/logout">logout</a></h3>
+
+<form method ="POST" action="/trip/add-trip">
+  <input type="text" name = "title" placeholder="title">
+  <input type="text" name = "url" placeholder="image url">
+  <input type="text" name = "departure" placeholder = "departure">
+  <input type="text" name = "myReturn" placeholder = "return">
+  <button>Add trip</button>
+</form>
+
+<ul>
+{{#trips}}
+<li>
+<form method = "POST" action = "/trip/delete-trip">
+  <img src = "{{url}}"/>
+  <h3>My trip to: {{title}}</h3>
+  <h4>Departue: {{departure}}</h4>
+  <h4>Return: {{myReturn}}</h4>
+  <input type = "hidden" name="city" value={{title}} />
+  <button>Remove</button>
+</form>
+</li>
+{{/trips}}
+</ul>
+
+</body>
+</html>
