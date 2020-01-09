@@ -64,6 +64,20 @@ app.post('/posts/delete-comment', async (req, res) => {
   res.send('Success')
 })
 
+app.post('/register', async (req, res)=> {
+  let name = req.body.name
+  let username = req.body.username
+  let password = req.body.password
+  
+  const register = models.User.build({
+    name: name, 
+    username: username,
+    password: password,
+  })
+  register.save().then(result => res.send("saved"))
+  
+})
+
 app.post('/posts/update-comment', async (req, res) => {
   const commentId = req.body.commentId
   const subject = req.body.subject
