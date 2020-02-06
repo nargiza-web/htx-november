@@ -1,0 +1,19 @@
+import { configure, shallow } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+import React from 'react'
+import NavigationItems from './NavigationItems'
+
+configure({adapter: new Adapter()})
+
+describe("<NavigationItems />",() => {
+    it("should display 3 items when user is authenticated",() => {
+        const wrapper = shallow(<NavigationItems isAuthenticated />)
+        expect(wrapper.find("li")).toHaveLength(3)
+    })
+
+    it("should display 1 item when user is not authenticated",() => {
+        const wrapper = shallow(<NavigationItems />) 
+        expect(wrapper.find("li")).toHaveLength(1)
+    })
+
+})

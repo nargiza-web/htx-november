@@ -1,0 +1,84 @@
+
+1) npx create-react-app book-app 
+2) npm install redux 
+3) npm install react-redux 
+4) npm install react-router-dom (multi-page app)
+5) Inside index.js import { createStore } from 'redux' 
+6) Inside index.js import { Provider } from 'react-redux' 
+7) const store = createStore(???) // we need to make a reducer 
+8) Create src/store/reducer.js 
+9) 
+
+const initialState = {
+    counter: 0 
+}
+
+const reducer = (state = initialState, action) => {
+    return state 
+}
+
+export default reducer 
+
+10) In index.js import reducer 
+import reducer from './store/reducer'
+11) update the store to pass the reducer 
+const store = createStore(reducer)
+12) Add a provider to inject the store to the react components 
+ReactDOM.render(
+<Provider store = { store }>
+<App />
+</Provider>
+, document.getElementById('root'));
+
+13) Inside your component where you want to use redux, import connect as shown below: 
+
+import { connect } from 'react-redux'
+
+14) If you want to get the global state in your component then use mapStateToProps as shown below: 
+
+const mapStateToProps = (state) => {
+  return {
+    ctr: state.counter 
+  }
+}
+
+15) Update connect to use mapStateToProps 
+export default connect(mapStateToProps)(App);
+
+16) You can display counter in your component by using local props since mapStateToProps has mapped global state to local props 
+
+{props.ctr} // make sure to pass props to the component constructor
+
+17) If you want to update the global state then you must implement mapDispatchToProps
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onIncrement: () => dispatch({type: 'INCREMENT_COUNTER'})
+  }
+}
+
+18) Update the connect to use mapDispatchToProps
+export default connect(mapStateToProps,mapDispatchToProps)(App);
+
+19) Fire the dispatch to update counter 
+<button onClick={() => props.onIncrement()}>Increment</button>
+
+20) Configure the Redux dev tools to see if the dispatch is firing or not. 
+
+21). Update the store to use redux dev tools in index.js file 
+const store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+
+22) Update the reducer.js to increment the counter 
+const reducer = (state = initialState, action) => {
+
+    if(action.type == "INCREMENT_COUNTER") {
+        return {
+            ...state, 
+            counter: state.counter + 1
+        }
+    }
+
+    return state 
+}
+
+23) Test using Redux Dev Tools to see if the state is being updated

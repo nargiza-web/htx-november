@@ -1,0 +1,3 @@
+
+export const INCREMENT_COUNTER = 'INCREMENT_COUNTER'
+export const TASK_ADDED = 'TASK_ADDED'
