@@ -1,0 +1,51 @@
+
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+export default function(ComposedComponent) {
+    const Authenticate = (props) => {
+        if(!props.isAuthenticated) {
+            props.history.push('/')
+        }
+
+        return <ComposedComponent {...props} />
+    }
+
+    const mapStateToProps = (state) => {
+        return {
+            isAuthenticated: state.isAuthenticated
+        }
+    }
+
+    return connect(mapStateToProps)(Authenticate)
+}
+
+/*
+export default function(ComposedComponent) {
+
+   class Authenticate extends Component {
+        constructor(props) {
+            super(props)
+
+            if(!props.isAuthenticated) {
+                this.props.history.push('/')
+            }
+
+        }
+
+        render() {
+            return (
+                <ComposedComponent {...this.props} />
+            )
+        }
+   }
+
+   const mapStateToProps = (state) => {
+       return {
+           isAuthenticated: state.isAuthenticated 
+       }
+   }
+
+   return connect(mapStateToProps)(Authenticate)
+
+} */
