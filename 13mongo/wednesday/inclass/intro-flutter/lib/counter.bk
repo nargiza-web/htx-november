@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(App());
+
+// _AppState is responsible for maintaining the state
+class _AppState extends State<App> {
+  
+  // variable to hold the counter value 
+  int _counter = 0; 
+
+  @override
+  Widget build(BuildContext context) {
+
+    return MaterialApp(
+      title: 'Title', 
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Welcome to Flutter")
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+            Text("The value of counter is $_counter", style: TextStyle(fontSize: 30)), 
+            FlatButton(
+              child: Text("Increment", style: TextStyle(fontSize: 30, color: Colors.white)), 
+              color: Colors.green,
+              onPressed: () {
+
+                setState(() {
+                  _counter += 1; 
+                });
+
+                print("Button is clicked...");
+                // when the button is pressed...
+              },
+            )
+          ],),
+        )
+        
+      )
+    );
+  }
+
+}
+
+class App extends StatefulWidget {
+
+  @override 
+  _AppState createState() => _AppState();
+}

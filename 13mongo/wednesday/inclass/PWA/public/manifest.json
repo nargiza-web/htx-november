@@ -1,0 +1,25 @@
+{
+  "name": "Progressive Web App",
+  "short_name": "PWAHello",
+  "icons": [
+    {
+      "src": "/src/images/icon192.png",
+      "type": "image/png",
+      "sizes": "192X192"
+    },
+    {
+      "src": "/src/images/icon512.png",
+      "type": "image/png",
+      "sizes": "512X512"
+    }
+  ],
+  "start_url": "/index.html",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff",
+  "theme_color": "#3f51b5",
+  "description": "A simple Instagram Clone, implementing a lot of PWA love.",
+  "dir": "ltr",
+  "lang": "en-US"
+}
